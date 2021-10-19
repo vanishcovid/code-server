@@ -89,6 +89,8 @@ RUN apt-get update  \
 	&& tar -zxvf /tmp/swift-5.4.1-RELEASE-ubuntu20.04.tar.gz -C /tmp > /dev/null 2>&1  \
 	&& cp -r /tmp/swift-5.4.1-RELEASE-ubuntu20.04/usr/* /usr  \
 	&& bash -c 'echo "Swift Installed!"'  \
+	&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	&& sudo dpkg -i google-chrome-stable_current_amd64.deb
 # Brave
 	&& curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg  \
 	&& echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|tee /etc/apt/sources.list.d/brave-browser-release.list  \
